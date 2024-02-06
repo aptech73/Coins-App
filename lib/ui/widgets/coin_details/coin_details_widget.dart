@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/domain/entities/coin_details.dart';
 import 'package:flutter_application/ui/widgets/coin_details/coin_details_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class CoinDetailsWidget extends StatelessWidget {
@@ -33,6 +34,23 @@ class _CoinDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final headerTextStyle = GoogleFonts.roboto(
+      textStyle: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.w500,
+          fontSize: 20
+      ),
+    );
+    final mainTextStyle = GoogleFonts.roboto(
+      textStyle: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.w400,
+          fontSize: 16
+      ),
+    );
+
+
     return SingleChildScrollView(
         child: Column(
           children: [
@@ -43,25 +61,13 @@ class _CoinDetails extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             if (coinDetails.description['en']! != "") ... [
-              const Align(
+              Align(
                 alignment: Alignment.topLeft,
-                child: Text("Description",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20
-                  ),
-                ),
+                child: Text("Description", style: headerTextStyle),
               )
             ],
             const SizedBox(height: 8),
-            Text(coinDetails.description['en']!,
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w400,
-                fontSize: 16
-              ),
-            )
+            Text(coinDetails.description['en']!, style: mainTextStyle)
       ],
     ));
   }

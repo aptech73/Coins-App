@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/ui/theme/app_colors.dart';
 import 'package:flutter_application/ui/widgets/coin_list/coin_list_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class CoinListWidget extends StatelessWidget {
@@ -35,20 +36,26 @@ class _CoinListItemWidget extends StatelessWidget {
     final model = context.watch<CoinsListViewModel>();
     final coin = model.state.coins[index];
 
-    const priceTextStyle = TextStyle(
-        color: AppColors.veryDarkGrey,
-        fontWeight: FontWeight.w600,
-        fontSize: 16
+    final priceTextStyle = GoogleFonts.getFont('Plus Jakarta Sans',
+        textStyle: const TextStyle(
+            color: AppColors.veryDarkGrey,
+            fontWeight: FontWeight.w600,
+            fontSize: 16
+        )
     );
-    const nameTextStyle = TextStyle(
-        color: AppColors.veryDarkGrey,
-        fontWeight: FontWeight.w500,
-        fontSize: 16
+    final nameTextStyle = GoogleFonts.getFont('Plus Jakarta Sans',
+        textStyle: const TextStyle(
+            color: AppColors.veryDarkGrey,
+            fontWeight: FontWeight.w500,
+            fontSize: 16
+        )
     );
-    const symbolTextStyle = TextStyle(
-        color: AppColors.darkGrey,
-        fontWeight: FontWeight.w400,
-        fontSize: 14
+    final symbolTextStyle = GoogleFonts.getFont('Plus Jakarta Sans',
+        textStyle: const TextStyle(
+            color: AppColors.veryDarkGrey,
+            fontWeight: FontWeight.w400,
+            fontSize: 14
+        )
     );
 
     return InkWell(

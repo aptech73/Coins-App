@@ -36,11 +36,32 @@ class _CoinDetails extends StatelessWidget {
     return SingleChildScrollView(
         child: Column(
           children: [
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Text("Description"),
+            const SizedBox(height: 10),
+            Align(
+              alignment: Alignment.center,
+              child: Image.network(coinDetails.image['large']!, scale: 3),
             ),
-            Text(coinDetails.description['en']!)
+            const SizedBox(height: 16),
+            if (coinDetails.description['en']! != "") ... [
+              const Align(
+                alignment: Alignment.topLeft,
+                child: Text("Description",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20
+                  ),
+                ),
+              )
+            ],
+            const SizedBox(height: 8),
+            Text(coinDetails.description['en']!,
+              style: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w400,
+                fontSize: 16
+              ),
+            )
       ],
     ));
   }

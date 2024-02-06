@@ -10,12 +10,15 @@ class CoinDetails {
   final String name;
   @JsonKey(name: 'description')
   final Map<String, String> description;
+  @JsonKey(name: 'image')
+  final Map<String, String> image;
 
 
   CoinDetails ({
     required this.id,
     required this.name,
-    required this.description
+    required this.description,
+    required this.image
   });
 
   factory CoinDetails.fromJson(Map<String, dynamic> json) => _$CoinDetailsFromJson(json);

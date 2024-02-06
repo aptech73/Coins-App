@@ -10,6 +10,7 @@ CoinDetails _$CoinDetailsFromJson(Map<String, dynamic> json) => CoinDetails(
       id: json['id'] as String,
       name: json['name'] as String,
       description: Map<String, String>.from(json['description'] as Map),
+      image: Map<String, String>.from(json['image'] as Map),
     );
 
 Map<String, dynamic> _$CoinDetailsToJson(CoinDetails instance) =>
@@ -17,4 +18,5 @@ Map<String, dynamic> _$CoinDetailsToJson(CoinDetails instance) =>
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
+      'image': instance.image,
     };
